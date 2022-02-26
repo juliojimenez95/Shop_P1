@@ -14,5 +14,7 @@
                 $"\nQuantity.........:   {$"{Quantity}"}"
                 + $"\nValue to pay: {$"{GetValueToPay():C2}",18}";
         }
+
+
     }
 }
