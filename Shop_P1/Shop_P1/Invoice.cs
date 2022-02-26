@@ -2,16 +2,39 @@
 {
     internal class Invoice : Ipay
     {
-        private List<Product> Products { get; set; }
+        private List<Product> _products= new List<Product>();
 
-        public void AddProduct(Product p) { 
+        public Invoice()
+        {
 
-            Products.Add(p);
+        }
+
+        public void AddProduct(Product p1) { 
+
+            _products.Add(p1);
         }
 
         public decimal GetValueToPay()
         {
-            throw new NotImplementedException();
+            decimal total = 0;
+            foreach (Product product in _products)
+            {
+                total += product.GetValueToPay() ;
+            }
+            return total;
         }
+
+        public override string ToString()
+        {
+            string payroll = "";
+            foreach(Product product in _products)
+            {
+                payroll+= product.ToString()+"\n";
+            }
+            return "------------------------------"+
+               $"\n{payroll}                    ================\n" +
+              $"total:         {$"{GetValueToPay():C2}",18}";
+        }
+
     }
 }

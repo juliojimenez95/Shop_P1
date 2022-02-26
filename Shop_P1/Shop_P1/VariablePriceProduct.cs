@@ -10,8 +10,9 @@
         }
         public override string ToString()
         {
-            return $"{base.ToString()}" +
-                $"\n\tValue to pay.........: {$"{GetValueToPay():C2}",18}";
+            return $"\n{base.ToString()}" + $"\nMeasurement........: {$"{Measurement}"}"+
+                $"\nQuantity.........:   {$"{Quantity}"}"
+                + $"\nValue to pay: {$"{GetValueToPay():C2}",18}";
         }
     }
 }

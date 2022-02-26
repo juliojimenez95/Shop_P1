@@ -27,7 +27,7 @@
             return $"{Id} {Description}" +
             $"\n Products...: {product}" +
             $"\n Discount...: {$"{Discount:P2}",15}" +
-            $"\n\tValue .........: {$"{GetValueToPay():C2}",18}";
+            $"\nValue to pay: {$"{GetValueToPay():C2}",18}";
         }
     }
 }
